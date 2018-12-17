@@ -59,8 +59,8 @@ on('ready', function () {
     var maxhp = parseInt(resolveAttr(cid, 'hitpoints').max, 10);
     var hpdown = maxhp - hp;
     var hppercentage = Math.floor(100 * hp / maxhp / 5) * 5;
-    var armorclass = parseInt(resolveAttr(cid, 'armor').current) + parseInt(resolveAttr(cid, 'armorMisc').current) + parseInt(resolveAttr(cid, 'dexterityMod').current);
-    var initiative = parseInt(resolveAttr(cid, 'initiativeMisc').current) + parseInt(resolveAttr(cid, 'dexterityMod').current);
+    var armorclass = parseInt(resolveAttr(cid, 'armorclass').current);
+    var initiative = parseInt(resolveAttr(cid, 'initiative').current);
     output = '<br><small><i><strong>' + resolveAttr(cid, 'alignment').current + '</strong> Lvl ' +resolveAttr(cid, 'level').current + ' ' + resolveAttr(cid, 'race').current + ' ' + resolveAttr(cid, 'class').current + '</i></small>';
     output += '<br><br><strong>HP:</strong> ' + hp + '/' + maxhp + ' ';
     output += hp < maxhp ? ' <small style=\'color:#9d0a0e\' title=\'down by ' + hpdown + ' points, (' + hppercentage + '%) \'> ' + hppercentage + '% (-' + hpdown + ' HP)</small> ' : '';
